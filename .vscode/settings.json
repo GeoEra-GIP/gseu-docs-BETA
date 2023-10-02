@@ -1,0 +1,45 @@
+{
+    "spellchecker.ignoreWordsList": [
+        "metadata",
+        "launguage"
+    ],
+    "cSpell.enableFiletypes": [
+        "markdown"
+    ],
+    "cSpell.enabled": true,
+    "cSpell.words": [
+        "analyse",
+        "descriptio",
+        "docsify",
+        "EGDI",
+        "EPSG",
+        "GDAL",
+        "gdalinfo",
+        "geospatial",
+        "geotiff",
+        "GSP's",
+        "linkdaturl",
+        "linkeddataurl",
+        "M",
+        "maplayerurl",
+        "maplayurl",
+        "mapurl",
+        "metadataurl",
+        "metadaturl",
+        "Mürz",
+        "netcdf",
+        "QGIS",
+        "repositoryurl",
+        "reposiurl",
+        "rz",
+        "shapefile",
+        "Shapefiles",
+        "standardised",
+        "thematisation",
+        "thematisations",
+        "visualise",
+        "Voxel",
+        "webinar",
+        "wellbores"
+    ]
+}

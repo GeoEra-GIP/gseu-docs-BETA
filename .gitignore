@@ -1,0 +1,4 @@
+# ignore spel check files
+.vscode\spellright.dict 
+.vscode\settings.json
+
