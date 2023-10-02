@@ -28,7 +28,7 @@ When you have your data ready (and harmonized) and have added your metadata to t
 
 We have also added a list of terms used in this documentation in the section [Used terms](main-content/ListOfTerms.md).
 
-## Short introduction to the EGDI WebGIS
+## EGDI WebGIS
 
 The EGDI WebGIS has standard WebGIS functionality such as:
 
@@ -39,17 +39,17 @@ The EGDI WebGIS has standard WebGIS functionality such as:
 * Download the data set as a GeoPackage (if uploaded to EGDI as GeoPackage)
 * Click info
 
-## Short introduction to the EGDI search system
+## EGDI search system
 
 The EGDI search system let the end user search the system. The search system will search through metadata, documents in the repository and the content of the datasets uploaded to EGDI.
 
-## Short introduction to the EGDI document repository
+## EGDI document repository
 
 The EGDI document repository let you store documents and pictures on the EGDI platform. When uploaded yoy will receive a static URL (a URI) to the file. This URI lets you refer to file from the EGDI WebGIS and homepages.
 
-## Short introduction to the EGDI metadata catalogue
+## EGDI metadata catalogue
 
-## Short introduction to the EGDI administration module
+## EGDI administration module
 
 The EGDI administration module (that this documentation describes) let data providers upload spatial data and filet to the EGDI platform and define maps and layers.
 
@@ -68,7 +68,6 @@ March 11. 2021 – A webinar was set up about entering metadata into the EGDI Me
 Presentations:
 
 1. Cookbook for creating metadata records using the EGDI Metadata Catalogue (MIcKA, version 6.0). Pavla Kramolišová (Czech Geological Survey - Metadata Support)
-
 2. A walk through on creating a metadata entry in the EGDI Metadata catalogue followed by an upload demonstration of a GeoPackage to the EGDI Document Repository. Trevor Alcorn (Geological Survey Ireland - MINDeSEA, Work Package 8)
 
 The webinar was arranged by James Trench (Liaison Officer to Raw Materials) under Work Package 2 for the GeoERA Raw Material projects.

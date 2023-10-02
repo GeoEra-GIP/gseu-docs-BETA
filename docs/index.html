@@ -1,92 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>EGDI Documentation</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="EGDI Documentation" content="EGDI Documentation">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="shortcut icon" href="/egdi-documentation/_media/egdi.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <title>EGDI Documentation</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="EGDI Documentation" content="EGDI Documentation">
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<!--  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">-->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/custom-style.css">
 
-    <!-- Theme: Simple Dark -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/style.css">
+  <!-- Theme: Simple Dark -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/style.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="scripts.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/index.js"></script>
-    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="scripts.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 </head>
-
 <body>
-    <div id="app"></div>
-    <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
-    <script>
+  <div id="app"></div>
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+  <script>
     let versions = [
       { folder: 'v2.0/', label: 'GSEU', default: false },
-      { folder: 'v1.0/', label: 'Geo-ERA', default: true }
+      { folder: 'v1.0/', label: 'GeoERA-GIP', default: true }
     ];
     let basePath = sessionStorage.getItem("basePath");
     if (basePath == null) {
       let defaultVersion = versions.find((v) => v.default).folder;
       sessionStorage.setItem("basePath", defaultVersion);
-    } 
+    }
     const versionFolder = sessionStorage.getItem("basePath");
     window.$docsify = {
-        name: 'EGDI Documentation',
-        search: 'auto', // default
-        coverpage: true,
-        execute: true,
-        auto2top   : true,
-        maxLevel   : 4,
-        subMaxLevel: 4,
-        versions: versions,
-        versionSelectorLabel: 'Version',
-        repo: '',
-        // Where to search
-        ga: '',
-        search: [
-            '/', // => /README.md
-        ],
-        // How to search
-        search: {
-            maxAge: 86400000, // Expiration time, the default one day
-            paths: 'auto', // or 'auto'
-            placeholder: 'Type to search',
-
-            // Localization
-            placeholder: {
-                '/': 'Type to search'
-            },
-
-            noData: 'No Results!',
-
-            // Localization
-            noData: {
-                '/': 'No Results'
-            },
-
-            // Headline depth, 1 - 6
-            depth: 4,
-
-            hideOtherSidebarContent: false, // whether or not to hide other sidebar content
-            
-            namespace: 'docs-' + versionFolder, // Set a unique namespace for each version
-
-            // To avoid search index collision
-            // between multiple websites under the same domain
-            namespace: 'EGDI-Documentation',
-        },
-        pagination: {
+      name: 'EGDI Documentation',
+      repo: 'https://github.com/GeoEra-GIP/gseu-docs-BETA',
+      loadSidebar: true,
+      loadNavbar: true,
+      execute: true,
+      auto2top   : true,
+      subMaxLevel: 3,
+      basePath: sessionStorage.getItem("basePath"),
+      search: {
+        maxAge: 86400000,
+        placeholder: 'Type to search',
+        noData: 'No results!',
+        depth: 6,
+        namespace: 'docs-' + versionFolder // Set a unique namespace for each version
+      },
+      versions: versions,
+      versionSelectorLabel: 'Version',
+      pagination: {
             crossChapter: true,
             crossChapterText: true,
         },
-        loadSidebar: true,
-        loadNavbar: true,
         plugins: [
             function render(hook, vm){
                 hook.beforeEach(function(content)    {
@@ -124,29 +96,40 @@
                     return content
                 });
             }
-        ],
+        ],  
     }
-    </script>
-    <!-- Plugins -->
-    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-    <script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
-    <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
-    <script>
-      mermaid.initialize({
-        startOnLoad: true,
-        securityLevel: 'loose',
-        logLevel: 1
-      });
-    </script>
-    <!-- docsify-themeable (latest v0.x.x) -->
-    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
-    <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-    <script src="//unpkg.com/docsify-copy-code"></script>
-    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
-    <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
-    <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
-    <!-- Syntax highlightining for SQL now works ;-( -->
-    <script src="//unpkg.com/prismjs/components/prism-sql.min.js"></script>
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-scss.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-java.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-properties.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@ky_wong/docsify-version-plugin@1.0.2/index.js"></script>
+  <!-- Plugins -->
+  
+  <script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
+  <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      logLevel: 1
+    });
+  </script>
+  <!-- docsify-themeable (latest v0.x.x) -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
+  
+  <script src="//unpkg.com/docsify-copy-code"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
+  <!-- Syntax highlightining for SQL now works ;-( -->
+  <script src="//unpkg.com/prismjs/components/prism-sql.min.js"></script>
 </body>
-
 </html>
